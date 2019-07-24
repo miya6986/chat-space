@@ -3,8 +3,8 @@
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association_members
 - belongs_to :group
@@ -14,9 +14,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
-|useremail|string|null: false|
-|userpassword|string|null: false|
+|name|string|null: false, index: true|
 
 ### Association_users
 - has_many :groups, through: :members
@@ -28,10 +26,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association_users
-- has_many :users, through: members
+- has_many :users, through: :members
 - has_many :members
 - has_many :comments
 
@@ -39,10 +36,10 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|comment|text|null: false|
-|image|mediumblob|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|comment|text|
+|image|string|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association_comments
 - belongs_to :user
