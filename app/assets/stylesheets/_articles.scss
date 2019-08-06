@@ -1,6 +1,17 @@
+@include set-color;
+
+p {
+  display: block;
+  word-wrap: break-word;
+}
+
+input[type=text] {
+  width: 100%;
+}
+
+
+
 .slide-box {
-  color: $slide-box--font-color;
-  background-color: $slide-box--color;
   text-align: center;
 }
 
@@ -12,7 +23,7 @@
 
 .user-box {
   width: 300px;
-  color: $user-box--font-color;
+  flex-shrink: 0;
 }
 
 .user-header {
@@ -21,7 +32,6 @@
   font-size: 16px;
   font-weight: bold;
   align-items: center;
-  background-color: $user-header--color;
   padding: 0 20px;
 }
 
@@ -31,12 +41,8 @@
   justify-content: space-between;
   &__icon {
     display: flex;
-    &--create-group {
-      color: $user-box--font-color;
-    }
     &--change-account {
-      color: $user-box--font-color;
-      margin-left: 0.5rem;
+      margin-left: 0.3rem;
     }
   }
 }
@@ -44,7 +50,6 @@
 .chat-groups {
   box-sizing: border-box;
   height: calc(100vh - 100px);
-  background-color: $chat-groups--color;
   padding: 20px 20px 0 20px;
   &__title {
     font-size: 15px;
@@ -61,58 +66,58 @@
 
 
 .chat-box {
-  box-sizing: border-box;
   width: calc(100vw - 300px);
 }
 
 .chat-header {
   box-sizing: border-box;
+  position: relative;
   height: 100px;
   border-bottom: solid 1px;
   border-color: $border-color;
   padding: $chat-box--padding;
-  overflow: hidden;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__btn {
+    box-sizing: border-box;
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    border: solid 1px;
+    border-color: $slide-box--color;
+    padding: 0 20px;
+    top: 28px;
+    right: 20px;
+  }
   &__member {
     font-size: 12px;
-    color: $chat-header__member--font-color;
     padding-top: 15px;
   }
 }
 
 .chat-info {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
-  &__title {
-    font-size: 20px;
-    color: $chat-info--font-color;
-    padding-top: 35px;
-  }
-  &__btn {
-    box-sizing: border-box;
-    height: 40px;
-    color: $slide-box--color;
-    line-height: 40px;
-    border: solid 1px;
-    border-color: $slide-box--color;
-    margin-top: 28px;
-    padding: 0 20px;
-  }
+  font-size: 20px;
+  padding-top: 35px;
 }
 
 .chat-contents-wrapper {
   box-sizing: border-box;
   height: calc(100vh - 190px);
-  background-color: $chat-contents--color;
   padding: 46px 40px 0 40px;
   overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
 }
 
 .chat-contents {
   margin-bottom: 40px;
   &__message {
     font-size: 14px;
-    color: $chat-contents--font-color;
   }
 }
 
@@ -121,11 +126,9 @@
   &__name {
     font-size: 16px;
     font-weight: bold;
-    color: $chat-contents--font-color;
   }
   &__date {
     font-size: 12px;
-    color: $chat-user__date--font-color;
     margin-left: 10px;
   }
 }
@@ -133,7 +136,6 @@
 .chat-form-wrapper {
   display: flex;
   height: 90px;
-  background-color: $chat-form--color;
   align-items: center;
   padding: $chat-box--padding;
 }
@@ -148,8 +150,6 @@
     width: 100px;
     line-height: 50px;
     text-align: center;
-    color: $slide-box--font-color;
-    background-color: $slide-box--color;
     margin-left: 15px;
   }
 }
@@ -158,13 +158,11 @@
   position: relative;
   height: 50px;
   width: 100%;
-  background-color: $slide-box--font-color;
   &__new-message {
     box-sizing: border-box;
     width: 100%;
     font-size: 16px;
     line-height: 50px;
-    color: $chat-contents--font-color;
     padding: 0 35px 0 10px;
   }
   &__btn-image {
@@ -174,6 +172,6 @@
   }
 }
 
-input[type=text] {
-  width: 100%;
+.image-send {
+  display: none;
 }

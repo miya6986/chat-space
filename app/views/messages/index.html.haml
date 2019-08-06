@@ -16,20 +16,19 @@
             = fa_icon 'cog', class: "user-menu__icon--change-account", right: true
     .chat-groups
       .chat-groups__title
-        タイトル
+        %p タイトル
       .chat-groups__messages
-        メッセージ
+        %p メッセージaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
       .chat-groups__title
-        タイトル
+        %p タイトル
       .chat-groups__messages
-        メッセージ
+        %p メッセージ
 
   .chat-box
     .chat-header
       .chat-info
-        .chat-info__title
-          グループ
-        %input{name: "edit", type: "submit", class: "chat-info__btn", value: "Edit"}
+        グループ
+      %input{name: "edit", type: "submit", class: "chat-header__btn", value: "Edit"}
       .chat-header__member
         メンバー
     .chat-contents-wrapper
@@ -38,23 +37,60 @@
           .chat-user__name
             私です
           .chat-user__date
-            2019-08-01
+            %p 2019-08-01
         .chat-contents__message
-          本当ですか？
+          %p 本当ですか？
         .chat-contents__image
       .chat-contents
         .chat-user
           .chat-user__name
             私です
           .chat-user__date
-            2019-08-01
+            %p 2019-08-01
         .chat-contents__message
-          本当ですか？
+          %p 本当ですか？
+        .chat-contents__image
+        .chat-contents
+        .chat-user
+          .chat-user__name
+            私です
+          .chat-user__date
+            %p 2019-08-01
+        .chat-contents__message
+          %p 本当ですか？
+        .chat-contents__image
+        .chat-contents
+        .chat-user
+          .chat-user__name
+            私です
+          .chat-user__date
+            %p 2019-08-01
+        .chat-contents__message
+          %P 本当ですか？
+        .chat-contents__image
+        .chat-contents
+        .chat-user
+          .chat-user__name
+            私です
+          .chat-user__date
+            %P 2019-08-01
+        .chat-contents__message
+          %p 本当ですか？
+        .chat-contents__image
+        .chat-contents
+        .chat-user
+          .chat-user__name
+            私です
+          .chat-user__date
+            %P 2019-08-01
+        .chat-contents__message
+          %p 本当ですか？
         .chat-contents__image
     .chat-form-wrapper
       .chat-form
         .chat-input
           %input{name: "message", type: "text", class: "chat-input__new-message", style: "border-style:none;", placeholder: "メッセージ"}
-          .chat-input__btn-image
+          %label.chat-input__btn-image
             = fa_icon 'image', right: true
+            %input{name: "image", type: "file", class: "image-send", accept: ".jpg, .gif, .png"}
         %input{name: "send", type: "submit", class: "chat-form__btn", value: "Send"}

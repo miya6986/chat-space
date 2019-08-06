@@ -1,0 +1,38 @@
+$bg-color: (
+  'slide-box': $slide-box--color,
+  'user-header': $user-header--color,
+  'chat-groups': $chat-groups--color,
+  'chat-contents-wrapper': $chat-contents--color,
+  'chat-form-wrapper': $chat-form--color,
+  'chat-form__btn': $slide-box--color,
+  'chat-input': $slide-box--color
+);
+
+$font-color: (
+  'slide-box': $slide-box--font-color,
+  'user-box': $user-box--font-color,
+  'user-menu__icon--create-group': $user-box--font-color,
+  'user-menu__icon--change-account': $user-box--font-color,
+  'chat-header__btn': $slide-box--color,
+  'chat-header__member': $chat-header__member--font-color,
+  'chat-info': $chat-info--font-color,
+  'chat-contents': $chat-contents--font-color,
+  'chat-user__name': $chat-contents--font-color,
+  'chat-user__date': $chat-user__date--font-color,
+  'chat-form__btn': $slide-box--font-color,
+  'chat-input__new-message': $chat-contents--font-color
+);
+
+
+@mixin set-color {
+  @each $bgc, $color in $bg-color {
+    .#{$bgc} {
+      background-color: $color;
+    }
+  }
+  @each $fontc, $color in $font-color {
+    .#{$fontc} {
+      color: $color;
+    }
+  }
+}
