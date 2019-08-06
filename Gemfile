@@ -54,3 +54,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use haml to write HTML easier
 gem 'haml-rails'
+
+# Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline
+gem 'font-awesome-rails'
