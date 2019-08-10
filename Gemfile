@@ -57,3 +57,6 @@ gem 'haml-rails'
 
 # Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline
 gem 'font-awesome-rails'
+
+# Use devise gem for user authentication
+gem "devise"
