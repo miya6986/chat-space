@@ -10,11 +10,11 @@
             = current_user.name
         %ul.user-menu__icon
           %li<
-          =link_to "http://google.com" do
-            = fa_icon 'edit', class: "user-menu__icon--create-group", right: true
+          =link_to new_group_path do
+            = fa_icon 'edit', class: "user-menu__icon--create-group"
           %li<
           =link_to edit_user_path(current_user) do
-            = fa_icon 'cog', class: "user-menu__icon--change-account", right: true
+            = fa_icon 'cog', class: "user-menu__icon--change-account"
     .chat-groups
       .chat-groups__title
         %p タイトル
@@ -29,7 +29,7 @@
     .chat-header
       .chat-info
         グループ
-      %input{name: "edit", type: "submit", class: "chat-header__btn", value: "Edit"}
+      %input{name: "edit", type: "button", class: "chat-header__btn", value: "Edit"}
       .chat-header__member
         メンバー
     .chat-contents-wrapper
