@@ -1,11 +1,5 @@
 .chat-group-form
-  %h1
-    新規チャットグループ
-    .chat-group-form__errors
-      %h2= "#{@group.errors.full_messages.count}件のエラーが発生しました。"
-      %ul
-        - @group.errors.full_messages.each do |message|
-          %li= message
-  %form#new_chat_group.new_chat_group{"accept-charset": "UTF-8", action: groups_path, method: "post"}
-    = form_for @group do |f|
-      = render partial: 'group-form', url: {action: :create}, locals: {f: f}
+  %h1 新規チャットグループ
+  = render 'alert'
+  = form_for @group do |f|
+    = render partial: 'group-form', locals: {f: f}

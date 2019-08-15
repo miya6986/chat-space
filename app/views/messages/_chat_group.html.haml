@@ -1,0 +1,25 @@
+.chat-box
+  .chat-header
+    .chat-info
+      グループ
+    %input{name: "edit", type: "button", class: "chat-header__btn", value: "Edit"}
+    .chat-header__member
+      メンバー
+  .chat-contents-wrapper
+    .chat-contents
+      .chat-user
+        .chat-user__name
+          私です
+        .chat-user__date
+          %p 2019-08-01
+      .chat-contents__message
+        %p 本当ですか？
+      .chat-contents__image
+  .chat-form-wrapper
+    .chat-form
+      .chat-input
+        %input{name: "message", type: "text", class: "chat-input__new-message", style: "border-style:none;", placeholder: "メッセージ"}
+        %label.chat-input__btn-image
+          = fa_icon 'image', right: true
+          %input{name: "image", type: "file", class: "image-send", accept: ".jpg, .gif, .png"}
+      %input{name: "send", type: "submit", class: "chat-form__btn", value: "Send"}
