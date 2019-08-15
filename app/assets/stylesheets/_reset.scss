@@ -124,3 +124,9 @@ legend {
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
+
+/* a tag color default no text-decoration */
+a {
+  color: inherit;
+  text-decoration: none;
+}
