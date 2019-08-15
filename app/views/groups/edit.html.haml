@@ -1,4 +1,4 @@
 .chat-group-form
   %h1 チャットグループ編集
   %form#edit_chat_group.edit_chat_group{"accept-charset": "UTF-8", action: group_path(@group), method: "patch"}
-    = render partial: 'group-form'
+    = render partial: 'group-form', url: {action: :update}, locals: {f: f}
