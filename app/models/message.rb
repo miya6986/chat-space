@@ -3,4 +3,6 @@ class Message < ApplicationRecord
   belongs_to :user
 
   validates :content, presence: true, unless: image.attribute.present?
+  
+  mount_uploader :image, ImageUploader
 end
