@@ -60,3 +60,7 @@ gem 'font-awesome-rails'
 
 # Use devise gem for user authentication
 gem "devise"
+
+# Save submit image
+gem 'carrierwave'
+gem 'mini_magick'
