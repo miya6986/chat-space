@@ -19,7 +19,4 @@
 public/uploads/*
 
 # Ignore posted images
-/public/*.jpg
-/public/*.png
-/public/*.gif
-/public/*.bmp
+/public/uploads/
