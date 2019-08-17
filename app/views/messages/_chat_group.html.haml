@@ -1,20 +1,26 @@
 .chat-box
   .chat-header
     .chat-info
-      グループ
-    %input{name: "edit", type: "button", class: "chat-header__btn", value: "Edit"}
+      = @group.title
+    = link_to "Edit", edit_group_path(@group), class: "chat-header__btn"
     .chat-header__member
-      メンバー
+      メンバー:
+      - @member.each do |member|
+        = member.name
   .chat-contents-wrapper
-    .chat-contents
-      .chat-user
-        .chat-user__name
-          私です
-        .chat-user__date
-          %p 2019-08-01
-      .chat-contents__message
-        %p 本当ですか？
-      .chat-contents__image
+    - @messages.each do |message|
+      .chat-contents
+        .chat-user
+          .chat-user__name
+            = message.user.name
+          .chat-user__date
+            %p
+              = message.created_at.strftime("%Y/%m/%d %H:%M")
+        .chat-contents__message
+          - if message.content.present?
+            %p
+              = message.content
+        = image_tag message.image, size: "300x300"
   .chat-form-wrapper
     = form_for [@group, @message], html: {class: "chat-form"} do |f|
       .chat-input
