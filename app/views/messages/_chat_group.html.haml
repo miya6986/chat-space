@@ -16,10 +16,11 @@
         %p 本当ですか？
       .chat-contents__image
   .chat-form-wrapper
-    .chat-form
+    = form_for [@group, @message], html: {class: "chat-form"} do |f|
       .chat-input
-        %input{name: "message", type: "text", class: "chat-input__new-message", style: "border-style:none;", placeholder: "メッセージ"}
-        %label.chat-input__btn-image
+        = f.text_field :content, class: "chat-input__new-message", placeholder: "メッセージ"
+        = f.label :image, class: "chat-input__btn-image" do
           = fa_icon 'image', right: true
-          %input{name: "image", type: "file", class: "image-send", accept: ".jpg, .gif, .png"}
-      %input{name: "send", type: "submit", class: "chat-form__btn", value: "Send"}
+          = f.file_field :image, class: "image-send", accept: ".jpg, .gif, .png"
+      = f.submit "Send", class: "chat-form__btn"
+  
