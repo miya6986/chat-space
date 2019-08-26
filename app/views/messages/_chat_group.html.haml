@@ -20,7 +20,8 @@
           - if message.content.present?
             %p
               = message.content
-        = image_tag message.image, size: "300x300"
+        - if message.image?
+          = image_tag message.image, size: "300x300"
   .chat-form-wrapper
     = form_for [@group, @message], html: {class: "chat-form"} do |f|
       .chat-input

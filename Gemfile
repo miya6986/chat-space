@@ -47,6 +47,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'capybara'
+  gem 'faker'
 end
 
 group :development do
@@ -56,7 +57,6 @@ group :development do
 end
 
 group :test do
-  gem 'faker'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -70,3 +70,6 @@ gem 'font-awesome-rails'
 # Save submit image
 gem 'carrierwave'
 gem 'mini_magick'
+
+# security updates
+gem "nokogiri", ">= 1.10.4"
