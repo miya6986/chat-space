@@ -1,29 +1,5 @@
 $(function() {
 
-  function messageDate(message) {
-    date = new Date(message.time);
-    var y = date.getFullYear();
-    var m = date.getMonth();
-    var d = date.getDate();
-    var H = date.getHours();
-    var M = date.getMinutes();
-    
-    if (m < 10) {
-      m = '0' + m;
-    }
-    if (d < 10) {
-      d = '0' + d;
-    }
-    if (H < 10) {
-      H = '0' + H;
-    }
-    if (M < 10) {
-      M = '0' + M;
-    }
-
-    return y + '/' + m + '/' + d + " " + H + ':' + M;
-  }
-
   function buildHTML(message) {
     image = ( message.image == null ? "": `<img src="${ message.image }" width="300" height="300">` );
     var html = `<div class="chat-contents">
@@ -33,7 +9,7 @@ $(function() {
                     </div>
                     <div class="chat-user__date">
                       <p>
-                        ${ messageDate(message) }
+                        ${ message.time }
                       </p>
                     </div>
                   </div>
