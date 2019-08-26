@@ -62,8 +62,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $(".chat-contents-wrapper").append(html);
-      $(".chat-input__new-message").val("");
-      $(".image-send").val("");
+      $(".chat-form")[0].reset();
       $(".chat-form__btn").prop("disabled", false);
       $(".chat-contents-wrapper").animate({scrollTop: $(".chat-contents-wrapper")[0].scrollHeight});
     })
