@@ -19,9 +19,19 @@
     .chat-group-form__search.clearfix
       %input#user-search-field.chat-group-form__input{placeholder: "追加したいユーザー名を入力してください", type: "text"}/
     #user-search-result
-  .chat-group-form__field--left
+  .chat-group-form__field--right#user-group-selected
+    .chat-group-user.clearfix
+      %input#group-user-ids{name: "group[user_ids][]", value: "#{current_user.id}", type: "hidden"}
+      %p.chat-group-user__name #{current_user.name}
+      .user-search-selected.chat-group-user__btn.chat-group-user__btn--remove{"data-user-id": "#{current_user.id}", "data-user-name": "#{current_user.name}"}
+    - if request.path_info == new_group_path
+    - elsif request.path_info == edit_group_path
+      - users.each do |user|
+        .chat-group-user.clearfix
+          %p.chat-group-user__name #{user.name}
+          .user-search-selected.chat-group-user__btn.chat-group-user__btn--remove{"data-user-id": "#{user.id}", "data-user-name": "#{user.name}"} 削除
+  .chat-group-form__field--left.clearfix
     = f.label "チャットメンバー", class: "chat-group-form__label"
-  .chat-group-form__field--right#user-group
 .chat-group-form__field
   .chat-group-form__field--left
   .chat-group-form__field--right
