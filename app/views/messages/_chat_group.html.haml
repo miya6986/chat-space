@@ -2,7 +2,7 @@
   .chat-header
     .chat-info
       = @group.title
-    = link_to "Edit", edit_group_path(@group), class: "chat-header__btn"
+    = link_to "Edit", edit_group_path(@group), class: "chat-header__btn", data: {"turbolinks": false}
     .chat-header__member
       メンバー:
       - @member.each do |member|

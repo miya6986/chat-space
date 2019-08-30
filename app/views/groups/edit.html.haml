@@ -2,4 +2,4 @@
   %h1 チャットグループ編集
   = render 'alert'
   = form_for @group do |f|
-    = render partial: 'group-form', locals: {f: f}
+    = render partial: 'group-form', locals: {f: f, group_users: @group_users}
