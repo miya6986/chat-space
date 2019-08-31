@@ -9,7 +9,7 @@
         = member.name
   .chat-contents-wrapper
     - @messages.each do |message|
-      .chat-contents
+      .chat-contents{data: {message: {id: "#{message.id}"}}}
         .chat-user
           .chat-user__name
             = message.user.name
