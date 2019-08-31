@@ -1,27 +1,4 @@
 $(function() {
-  
-  var buildHTML = function(message) {
-    image = ( message.image == null ? "": `<img src="${ message.image }" width="300" height="300">` );
-    var html = `<div class="chat-contents" data-message-id="${ message.id }">
-                  <div class="chat-user">
-                    <div class="chat-user__name">
-                      ${ message.user_name }
-                    </div>
-                    <div class="chat-user__date">
-                      <p>
-                        ${ message.time }
-                      </p>
-                    </div>
-                  </div>
-                  <div class="chat-contents__message">
-                    <p>
-                      ${ message.content }
-                    </p>
-                  </div>
-                  ${ image }
-                </div>`
-    return html;
-  }
 
   var builedMessageHTML = function(message) {
       var message_content = ( message.content == null ? "": `<div class="chat-contents__message"><p>${ message.content }</p></div>`);
@@ -77,7 +54,7 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      var html = buildHTML(data);
+      var html = buildMessageHTML(data);
       $(".chat-contents-wrapper").append(html);
       $(".chat-form")[0].reset();
       $(".chat-form__btn").prop("disabled", false);
