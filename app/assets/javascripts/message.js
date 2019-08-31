@@ -1,6 +1,6 @@
 $(function() {
 
-  var builedMessageHTML = function(message) {
+  var buildMessageHTML = function(message) {
       var message_content = ( message.content == null ? "": `<div class="chat-contents__message"><p>${ message.content }</p></div>`);
       var message_image = ( message.image == null ? "": `<img src="${ message.image }" width="300" height="300">`);
       var html = `<div class="chat-contents" data-message-id="${ message.id }">
@@ -28,10 +28,10 @@ $(function() {
       dataType: 'json',
       data: {id: last_message_id}
     })
-    .done(function(messages) {
+    .done(function(data) {
       var html = "";
-      $.each(messages, function(i, message) {
-        html = builedMessageHTML(message);
+      $.each(data, function(i, message) {
+        html = buildMessageHTML(message);
         $(".chat-contents-wrapper").append(html);
       })
       $(".chat-contents-wrapper").animate({scrollTop: $(".chat-contents-wrapper")[0].scrollHeight});
