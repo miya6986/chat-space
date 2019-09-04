@@ -47,7 +47,7 @@ set :rbenv_ruby, '2.5.1'
 # Uncomment the following to require manually verifying the host key before first deploy.
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['/.ssh/miyadev_ec2.pem']
+                  keys: ['~/.ssh/miyadev_ec2.pem']
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
