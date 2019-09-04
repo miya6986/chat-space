@@ -82,3 +82,5 @@ gem 'mini_magick'
 gem "nokogiri", ">= 1.10.4"
 
 gem "devise"
+
+gem 'fog-aws'
