@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
 
   var buildMessageHTML = function(message) {
       var message_content = ( message.content == null ? "": `<div class="chat-contents__message"><p>${ message.content }</p></div>`);
@@ -20,7 +20,7 @@ $(function() {
       return html;
     }
 
-  var reloadMessages = (function() {
+  var reloadMessages = function() {
     last_message_id = $(".chat-contents:last").data("message-id");
     $.ajax({
       type: 'GET',
@@ -34,12 +34,14 @@ $(function() {
         html = buildMessageHTML(message);
         $(".chat-contents-wrapper").append(html);
       })
-      $(".chat-contents-wrapper").animate({scrollTop: $(".chat-contents-wrapper")[0].scrollHeight});
+      if (data.id) {
+        $(".chat-contents-wrapper").animate({scrollTop: $(".chat-contents-wrapper")[0].scrollHeight});
+      }
     })
     .fail(function() {
       alert("error");
     })
-  })
+  }
 
   $(".chat-form").on("submit", function(e) {
     e.preventDefault();
