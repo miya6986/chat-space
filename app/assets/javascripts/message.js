@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function() {
         html = buildMessageHTML(message);
         $(".chat-contents-wrapper").append(html);
       })
-      if (data.id) {
+      if (data.length != 0) {
         $(".chat-contents-wrapper").animate({scrollTop: $(".chat-contents-wrapper")[0].scrollHeight});
       }
     })
