@@ -81,5 +81,5 @@ gem 'mini_magick'
 # security updates
 gem "nokogiri", ">= 1.10.4"
 
-gem "devise"
+gem "devise", '~> 4.7.1'
 gem 'fog-aws'
